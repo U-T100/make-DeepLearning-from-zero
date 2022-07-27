@@ -23,6 +23,10 @@ def _numerical_gradient_no_batch(f, x):
     return grad
 
 
+
+
+
+
 def numerical_gradient(f, X):
     if X.ndim == 1:
         return _numerical_gradient_no_batch(f, X)
@@ -47,6 +51,9 @@ def tangent_line(f, x):
     print(d)
     y = f(x) - d*x
     return lambda t: d*t + y
+
+
+
 
 
 if __name__ == '__main__':

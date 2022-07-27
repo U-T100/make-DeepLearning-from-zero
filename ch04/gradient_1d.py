@@ -16,15 +16,17 @@ def tangent_line(f, x):
     d = numerical_diff(f, x)
     print(d)
     y = f(x) - d*x
+    print(y)
     return lambda t: d*t + y
      
 x = np.arange(0.0, 20.0, 0.1)
+
 y = function_1(x)
 plt.xlabel("x")
 plt.ylabel("f(x)")
 
-tf = tangent_line(function_1, 5)
-y2 = tf(x)
+tf = tangent_line(function_1, 10)
+y2 = tf(x) # どうしてy2で接線が引けるのか？
 
 plt.plot(x, y)
 plt.plot(x, y2)
