@@ -22,12 +22,8 @@ def _numerical_gradient_no_batch(f, x):
         
     return grad
 
-
-
-
-
-
 def numerical_gradient(f, X):
+    X = X.astype(float)
     if X.ndim == 1:
         return _numerical_gradient_no_batch(f, X)
     else:
@@ -37,7 +33,6 @@ def numerical_gradient(f, X):
             grad[idx] = _numerical_gradient_no_batch(f, x)
         
         return grad
-
 
 def function_2(x):
     if x.ndim == 1:
@@ -51,10 +46,6 @@ def tangent_line(f, x):
     print(d)
     y = f(x) - d*x
     return lambda t: d*t + y
-
-
-
-
 
 if __name__ == '__main__':
     x0 = np.arange(-2, 2.5, 0.25)
