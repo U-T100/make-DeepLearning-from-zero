@@ -11,6 +11,8 @@ from two_layer_net import TwoLayerNet
 
 network = TwoLayerNet(input_size=784, hidden_size=50, output_size=10)
 
+
+
 iters_num = 10000
 train_size = x_train.shape[0]
 batch_size = 100
